@@ -21,4 +21,6 @@ mat-chip {
 
 mat-card-content {
     margin-top: 5px;
+    height: 80px;
+    overflow-y: scroll;
 }
