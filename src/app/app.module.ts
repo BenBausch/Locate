@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LocationDisplayerModule } from './components/location-displayer/location-displayer.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavigationModule } from './components/navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     LocationDisplayerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
