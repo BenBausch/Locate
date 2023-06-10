@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { LocationDisplayerModule } from './components/location-displayer/location-displayer.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationModule } from './components/navigation/navigation.module';
+import { SearchMenuModule } from './components/search-menu/search-menu.module';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { NavigationModule } from './components/navigation/navigation.module';
     BrowserModule,
     LocationDisplayerModule,
     BrowserAnimationsModule,
-    NavigationModule
+    NavigationModule, 
+    SearchMenuModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

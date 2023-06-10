@@ -1,7 +1,18 @@
 {
   "dependencies": {
     "@angular/cli": "^16.0.4",
+    "@angular/forms": "^16.0.4",
     "@angular/material": "^16.0.3",
     "@angular/platform-browser-dynamic": "^16.0.4"
-  }
+  },
+  "name": "frontend",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
