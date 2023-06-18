@@ -1,0 +1,16 @@
+<a [routerLink]="['location', sport_inf?.id]">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ sport_inf?.name }}</mat-card-title>
+      <mat-card-subtitle>{{ sport_inf?.sport }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="{{ sport_inf?.imageUrl }}"
+      alt="Sport location: {{ sport_inf?.name }}"
+    />
+    <mat-card-content>
+      <mat-chip *ngFor="let tag of sport_inf?.tags">{{ tag }}</mat-chip>
+    </mat-card-content>
+  </mat-card>
+</a>

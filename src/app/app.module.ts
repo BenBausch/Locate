@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-import { LocationDisplayerModule } from './components/location-displayer/location-displayer.module';
+import { LocationDisplayerModule } from './search-menu/location-displayer/location-displayer.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationModule } from './components/navigation/navigation.module';
-import { SearchMenuModule } from './components/search-menu/search-menu.module';
-import { RouterModule, Routes } from '@angular/router';
+import { NavigationModule } from './navigation/navigation.module';
+import { SearchMenuModule } from './search-menu/search-menu.module';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { LocationOverlayModule } from './locations/location-overlay/location-overlay.module';
+import { PageNotFoundModule } from './special-page/page-not-found/page-not-found.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { RouterModule, Routes } from '@angular/router';
     BrowserAnimationsModule,
     NavigationModule, 
     SearchMenuModule,
-    RouterModule
+    LocationOverlayModule,
+    RouterModule,
+    AppRoutingModule,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]

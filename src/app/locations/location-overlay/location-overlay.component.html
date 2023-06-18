@@ -1,0 +1,19 @@
+<div>
+  <div class="header-img">
+    <img
+      src="{{ sportInf?.imageUrl }}"
+      alt="Sport location: {{ sportInf?.name }}"
+    />
+  </div>
+  <h1>
+    {{ sportInf?.name }}
+  </h1>
+  <p>
+    The location is a {{ sportInf?.sport }} infrastructure. Look at the map
+    below to find its location. The properties of the infrastructure are the
+    following:
+  </p>
+  <div class="app-map-container">
+    <app-map [options]="options"></app-map>
+  </div>
+</div>

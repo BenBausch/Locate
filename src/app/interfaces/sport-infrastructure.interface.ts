@@ -1,4 +1,5 @@
 export interface SportInfrastructure {
+    id: number,
     name: string,
     sport: string,
     imageUrl: string,
