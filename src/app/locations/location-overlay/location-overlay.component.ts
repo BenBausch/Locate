@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { data } from 'src/app/data';
 import { SportInfrastructure, MapOptions } from 'src/app/interfaces';
+import { LocationDataService } from 'src/app/services/location-data.service';
 
 @Component({
   selector: 'location-overlay',
@@ -8,31 +9,21 @@ import { SportInfrastructure, MapOptions } from 'src/app/interfaces';
   styleUrls: ['./location-overlay.component.scss']
 })
 export class LocationOverlayComponent implements OnInit{
-  @Input() id!:number;
+  @Input() id:number = -1;
 
   sportInf?: SportInfrastructure;
   options?: MapOptions;
 
-  constructor() {
-    
-  }
+  locationDataService: LocationDataService = inject(LocationDataService);
 
   ngOnInit(): void {
-    this.sportInf = this.getFurtherDetails();
-    console.log(this.sportInf?.tags);
-
+    this.sportInf = this.locationDataService.getSportInfrastructureById(Number(this.id));
     this.options = {
       tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution: 'OpenStreetMap contributors helped',
       zoomLevel: 15,
       latitude: this.sportInf?.coordinates[0],
-      logitude: this.sportInf?.coordinates[1]
+      longitude: this.sportInf?.coordinates[1]
     }
   }
-  
-  getFurtherDetails() {
-    const details = data.at(this.id) as SportInfrastructure;
-    return details;
-  }
-
 }

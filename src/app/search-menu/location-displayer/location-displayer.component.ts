@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SportInfrastructure } from 'src/app/interfaces';
-import { data } from 'src/app/data';
+import { LocationDataService } from 'src/app/services/location-data.service';
 
 @Component({
   selector: 'location-displayer',
@@ -8,5 +8,10 @@ import { data } from 'src/app/data';
   styleUrls: ['./location-displayer.component.scss']
 })
 export class LocationDisplayerComponent {
-  entries: SportInfrastructure[] = data;
+  entries: SportInfrastructure[] = [];
+  locationService: LocationDataService = inject(LocationDataService);
+
+  constructor() {
+    this.entries = this.locationService.getAllSportInfrastructures();
+  }
 }

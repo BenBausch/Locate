@@ -1,4 +1,15 @@
 #location-map {
     height: 600px;
     width: 600px;
+    background-color: lightgray;
+}
+
+.map-unavailable-error {
+    color: rgb(182, 52, 17);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
 }
