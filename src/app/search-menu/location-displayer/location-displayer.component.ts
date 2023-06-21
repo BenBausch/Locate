@@ -5,13 +5,15 @@ import { LocationDataService } from 'src/app/services/location-data.service';
 @Component({
   selector: 'location-displayer',
   templateUrl: './location-displayer.component.html',
-  styleUrls: ['./location-displayer.component.scss']
+  styleUrls: ['./location-displayer.component.scss'],
 })
 export class LocationDisplayerComponent {
   entries: SportInfrastructure[] = [];
   locationService: LocationDataService = inject(LocationDataService);
 
   constructor() {
-    this.entries = this.locationService.getAllSportInfrastructures();
+    this.locationService
+      .getAllSportInfrastructures()
+      .subscribe((data) => (this.entries = data));
   }
 }

@@ -11,7 +11,7 @@ export class GeolocationService {
     if (navigator.geolocation) {
       try {
         const position = await new Promise<GeolocationPosition>((resolve, reject) => {
-          navigator.geolocation.getCurrentPosition(resolve, reject);
+          navigator.geolocation.getCurrentPosition(resolve, reject,{enableHighAccuracy: true});
         });
   
         const lat = position.coords.latitude;

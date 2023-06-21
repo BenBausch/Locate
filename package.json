@@ -22,6 +22,7 @@
     "@angular/router": "^16.0.0",
     "@asymmetrik/ngx-leaflet": "^16.0.1",
     "@types/leaflet": "^1.9.3",
+    "help": "^3.0.2",
     "leaflet": "^1.9.4",
     "lottie-web": "^5.12.2",
     "ngx-lottie": "^10.0.0",

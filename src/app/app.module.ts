@@ -10,24 +10,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { LocationOverlayModule } from './locations/location-overlay/location-overlay.module';
 import { PageNotFoundModule } from './special-page/page-not-found/page-not-found.module';
 import { NewLocationModule } from './locations/new-location/new-location.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     LocationDisplayerModule,
     BrowserAnimationsModule,
-    NavigationModule, 
+    NavigationModule,
     SearchMenuModule,
     LocationOverlayModule,
     RouterModule,
     AppRoutingModule,
     PageNotFoundModule,
-    NewLocationModule
+    NewLocationModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
