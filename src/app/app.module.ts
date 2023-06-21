@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationOverlayModule } from './locations/location-overlay/location-overlay.module';
 import { PageNotFoundModule } from './special-page/page-not-found/page-not-found.module';
+import { NewLocationModule } from './locations/new-location/new-location.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PageNotFoundModule } from './special-page/page-not-found/page-not-found
     LocationOverlayModule,
     RouterModule,
     AppRoutingModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+    NewLocationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

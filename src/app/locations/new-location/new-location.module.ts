@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NewLocationComponent } from './new-location.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MapModule } from 'src/app/components/map/map.module';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,12 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MapModule
   ],
   exports:[
     NewLocationComponent
   ],
   providers: []
 })
-export class NavigationModule { }
+export class NewLocationModule { }

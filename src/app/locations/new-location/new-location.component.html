@@ -1,3 +1,5 @@
 <!-- <form [formGroup]="newLocationForm"></form> -->
-<p>{{ lat }}</p>
-<p>{{ lng }}</p>
+<p>{{ geolocation?.at(0) }}</p>
+<p>{{ geolocation?.at(1) }}</p>
+<button (click)="getUserGeolocation()">Get Location</button>
+<app-map [options]="options"></app-map>

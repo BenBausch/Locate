@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MapOptions } from 'src/app/interfaces';
+import { GeolocationService } from 'src/app/services/geolocation.service';
 
 @Component({
   selector: 'app-new-location',
@@ -18,27 +20,29 @@ export class NewLocationComponent {
   //   street: new FormControl(),
   //   countryCode: new FormControl()
   // });
+  options: MapOptions = {
+    tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    attribution: 'OpenStreetMap contributors helped',
+    zoomLevel: 15,
+    latitude: undefined,
+    longitude: undefined
+  };
 
-  public lat?: number;
-  public lng?: number;
+  protected geolocation?: number[];
 
-  public ngOnInit(): void {
-    this.getLocation();
-  }
+  geolocationService: GeolocationService = inject(GeolocationService);
 
-  getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        if (position) {
-          console.log("Latitude: " + position.coords.latitude +
-            "Longitude: " + position.coords.longitude);
-          this.lat = position.coords.latitude;
-          this.lng = position.coords.longitude;
-        }
-      },
-        (error) => console.log(error));
-    } else {
-      alert("Geolocation is not supported by this browser.");
+  async getUserGeolocation() {
+    this.geolocation = await this.geolocationService.getUserGeolocation();
+    if (this.geolocation) {
+      this.options = {
+        tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        attribution: 'OpenStreetMap contributors helped',
+        zoomLevel: 15,
+        latitude: this.geolocation[0],
+        longitude: this.geolocation[1]
+      }; 
     }
   }
+  
 }
