@@ -16,7 +16,7 @@
             "name": "CS Coque",
             "sport": "Basketball",
             "imageUrl": "assets/images/basketball/location2/location2.jpg",
-            "tags": ["Full Court", "Good Condition", "Wood", "Stadium", "Indoor"],
+            "tags": ["Full Court", "Good Condition", "Wood", "Indoor"],
             "coordinates": [49.62311, 6.15428],
             "housenumber": null,
             "postcode": null,

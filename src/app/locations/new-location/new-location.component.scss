@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-form-field {
+    margin: 20px;
+    margin-right: 20px;
+}
+
+.chip-lists{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}

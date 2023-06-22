@@ -2,22 +2,31 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NewLocationComponent } from './new-location.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapModule } from 'src/app/components/map/map.module';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [
-    NewLocationComponent
-  ],
+  declarations: [NewLocationComponent],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    MapModule
+    MapModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatIconModule,
+    FormsModule,
   ],
-  exports:[
-    NewLocationComponent
-  ],
-  providers: []
+  exports: [NewLocationComponent],
+  providers: [],
 })
-export class NewLocationModule { }
+export class NewLocationModule {}
