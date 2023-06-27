@@ -1,0 +1,19 @@
+.file-input {
+    display: none;
+}
+
+.file-upload {
+    padding: 10px;
+    background-color: lightgrey;
+}
+
+.image-preview {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    max-height: 100%;
+}

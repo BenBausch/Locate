@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { SportInfrastructure, MapOptions } from 'src/app/interfaces';
+import { ISportInfrastructure, IMapOptions } from 'src/app/interfaces';
 import { LocationDataService } from 'src/app/services/location-data.service';
 
 @Component({
@@ -10,15 +10,15 @@ import { LocationDataService } from 'src/app/services/location-data.service';
 export class LocationOverlayComponent implements OnInit {
   @Input() id: number = -1;
 
-  sportInf?: SportInfrastructure;
-  options?: MapOptions;
+  sportInf?: ISportInfrastructure;
+  options?: IMapOptions;
 
   locationDataService: LocationDataService = inject(LocationDataService);
 
   ngOnInit(): void {
     this.locationDataService
       .getSportInfrastructureById(Number(this.id))
-      .subscribe(async (data: SportInfrastructure) => {
+      .subscribe(async (data: ISportInfrastructure) => {
         this.sportInf = data;
         this.options = {
           tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',

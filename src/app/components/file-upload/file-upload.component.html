@@ -1,0 +1,17 @@
+<div>
+  <input
+    type="file"
+    class="file-input"
+    (change)="onFileSelected($event)"
+    #fileInputField
+  />
+  <div class="file-upload">
+    {{ image.name || "No File uploaded yet!" }}
+    <button (click)="fileInputField.click()">
+      <mat-icon>attach_file</mat-icon>
+    </button>
+    <div class="image-preview">
+      <img src="{{ image.url }}" alt="" #filePreview />
+    </div>
+  </div>
+</div>

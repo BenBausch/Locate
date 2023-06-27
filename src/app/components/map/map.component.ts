@@ -1,14 +1,20 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { Marker, icon, latLng, tileLayer, Map } from 'leaflet';
-import { MapOptions } from 'src/app/interfaces';
+import { IMapOptions } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit, OnChanges {
-  @Input() options?: MapOptions;
+  @Input() options?: IMapOptions;
   map?: Map;
   marker?: Marker;
   displayMapUnavailableError = false;
@@ -33,7 +39,9 @@ export class MapComponent implements OnInit, OnChanges {
 
       console.log(this.map);
 
-      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
+      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
+        this.map
+      );
 
       this.addMarker();
     } else {
@@ -58,7 +66,10 @@ export class MapComponent implements OnInit, OnChanges {
       }),
     };
     if (this.options?.latitude && this.options?.longitude && this.map) {
-      const markerPosition = latLng([this.options.latitude, this.options.longitude]);
+      const markerPosition = latLng([
+        this.options.latitude,
+        this.options.longitude,
+      ]);
       this.marker = new Marker(markerPosition, markerOptions).addTo(this.map);
     }
   }

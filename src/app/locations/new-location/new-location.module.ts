@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { FileUploadComponent } from 'src/app/components/file-upload/file-upload.component';
+import { FileUploadModule } from 'src/app/components/file-upload/file-upload.module';
 
 @NgModule({
   declarations: [NewLocationComponent],
@@ -25,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatChipsModule,
     MatIconModule,
     FormsModule,
+    FileUploadModule,
   ],
   exports: [NewLocationComponent],
   providers: [],

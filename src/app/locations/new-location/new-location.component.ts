@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatChip } from '@angular/material/chips';
-import { MapOptions } from 'src/app/interfaces';
+import { IMapOptions } from 'src/app/interfaces';
 import { GeolocationService } from 'src/app/services/geolocation.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class NewLocationComponent {
     longitude: new FormControl(),
   });
 
-  options: MapOptions = {
+  options: IMapOptions = {
     tileLayer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     attribution: 'OpenStreetMap contributors helped',
     zoomLevel: 15,
