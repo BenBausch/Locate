@@ -1,5 +1,5 @@
 export interface ISportInfrastructure {
-  id: number;
+  id: number | null;
   name: string;
   sport: string;
   imageUrl: string;
