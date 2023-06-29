@@ -15,3 +15,11 @@ mat-form-field {
     flex-direction: column;
     justify-content: left;
 }
+
+.ng-invalid * {
+    color: red;
+}
+
+.ng-valid * {
+    color: rgb(72, 71, 71);
+}

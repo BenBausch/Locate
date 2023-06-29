@@ -2,9 +2,8 @@ export interface ISportInfrastructure {
   id: number | null;
   name: string;
   sport: string;
-  imageUrl: string;
+  imageUrl: string | null;
   tags: string[];
-  // Everything realted to the address
   coordinates: number[];
   housenumber?: number;
   postcode?: number;

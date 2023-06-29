@@ -20,4 +20,9 @@ export class LocationDataService {
     );
     return location;
   }
+
+  postNewSportInfrastructure(
+    data: ISportInfrastructure,
+    imageData: ImageData
+  ) {}
 }

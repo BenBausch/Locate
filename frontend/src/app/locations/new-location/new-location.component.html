@@ -2,12 +2,12 @@
 <form [formGroup]="newLocationForm">
   <mat-form-field>
     <mat-label>Location Name:</mat-label>
-    <input matInput formControlName="name" />
+    <input matInput formControlName="nameControl" />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Sport Categorie</mat-label>
-    <mat-select formControlName="sport">
+    <mat-select formControlName="sportControl">
       <mat-option>Clear</mat-option>
       <mat-option value="Basketball">Basketball</mat-option>
       <mat-option value="Football">Football (Soccer)</mat-option>
@@ -18,11 +18,24 @@
   <div class="chip-lists">
     <div>
       <mat-label for="Roofing Selection">What is the roofing like?</mat-label>
-      <mat-chip-listbox #chipList aria-label="Roofing Selection">
-        <mat-chip-option
-          *ngFor="let chip of roofingTags"
-          (click)="toggleChipSelection(chip)"
-        >
+      <mat-chip-listbox
+        #chipList
+        aria-label="Roofing Selection"
+        formControlName="roofingTagsControl"
+      >
+        <mat-chip-option *ngFor="let chip of roofingTags">
+          {{ chip }}
+        </mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+    <div>
+      <mat-label for="Flooring Selection">What is the floor made of?</mat-label>
+      <mat-chip-listbox
+        #chipList
+        aria-label="Flooring Selection"
+        formControlName="flooringTagsControl"
+      >
+        <mat-chip-option *ngFor="let chip of flooringTags">
           {{ chip }}
         </mat-chip-option>
       </mat-chip-listbox>
@@ -32,64 +45,43 @@
         >What is the condition of the infrastructure?</mat-label
       >
 
-      <mat-chip-listbox #chipList aria-label="Condition Selection">
-        <mat-chip-option
-          *ngFor="let chip of conditionTags"
-          (click)="toggleChipSelection(chip)"
-        >
+      <mat-chip-listbox
+        #chipList
+        aria-label="Condition Selection"
+        formControlName="conditionTagsControl"
+      >
+        <mat-chip-option *ngFor="let chip of conditionTags">
           {{ chip }}
         </mat-chip-option>
       </mat-chip-listbox>
     </div>
-
     <div>
       <mat-label for="Court Selection"
         >What is the infrastructure size?</mat-label
       >
-      <mat-chip-listbox #chipList aria-label="Court Selection">
-        <mat-chip-option
-          *ngFor="let chip of courtTags"
-          (click)="toggleChipSelection(chip)"
-        >
-          {{ chip }}
-        </mat-chip-option>
-      </mat-chip-listbox>
-    </div>
-
-    <div>
-      <mat-label for="Flooring Selection">What is the floor made of?</mat-label>
-      <mat-chip-listbox #chipList aria-label="Flooring Selection">
-        <mat-chip-option
-          *ngFor="let chip of flooringTags"
-          (click)="toggleChipSelection(chip)"
-        >
+      <mat-chip-listbox
+        #chipList
+        aria-label="Court Selection"
+        formControlName="courtTagsControl"
+      >
+        <mat-chip-option *ngFor="let chip of courtTags">
           {{ chip }}
         </mat-chip-option>
       </mat-chip-listbox>
     </div>
   </div>
 
-  <app-file-upload />
+  <app-file-upload formControlName="imageUploadControl" />
 
   <div>
     <mat-form-field>
       <mat-label>Latitude Coordinate:</mat-label>
-      <input
-        type="number"
-        matInput
-        formControlName="latitude"
-        [value]="geolocation?.[0]"
-      />
+      <input type="number" matInput formControlName="latitudeControl" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Longitude Coordinate:</mat-label>
-      <input
-        type="number"
-        matInput
-        formControlName="longitude"
-        [value]="geolocation?.[1]"
-      />
+      <input type="number" matInput formControlName="longitudeControl" />
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="getUserGeolocation()">
@@ -97,4 +89,5 @@
     </button>
   </div>
   <app-map [options]="options"></app-map>
+  <button mat-raised-button color="primary" (click)="submit()">Submit!</button>
 </form>
